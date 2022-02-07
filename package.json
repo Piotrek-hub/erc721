@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.4.2",
@@ -24,7 +25,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "ethereum-waffle": "^3.4.0",
-    "hardhat": "^2.8.3"
+    "hardhat": "^2.8.3",
+    "push-dir": "^0.4.1"
   },
   "eslintConfig": {
     "root": true,
