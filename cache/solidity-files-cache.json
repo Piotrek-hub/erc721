@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "E:\\Projects\\erc721\\contracts\\Nft.sol": {
-      "lastModificationDate": 1644253060576,
-      "contentHash": "96e9a762d2cc3c8f67be842b8172a515",
+      "lastModificationDate": 1644262120307,
+      "contentHash": "57d4351eb5c5b065948635fab631997e",
       "sourceName": "contracts/Nft.sol",
       "solcConfig": {
         "version": "0.8.4",
