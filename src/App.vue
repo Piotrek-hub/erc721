@@ -87,7 +87,7 @@ export default {
 			}
 		},
 
-		getData() {
+		async getData() {
 			[this.symbol, this.name, this.supply] =
 				await fetchContractMetadata();
 		},
