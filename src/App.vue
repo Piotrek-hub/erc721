@@ -87,12 +87,12 @@ export default {
 			}
 		},
 
-		async getData() {
+		getData() {
 			[this.symbol, this.name, this.supply] =
 				await fetchContractMetadata();
 		},
 
-		async mint() {
+		mint() {
 			mint(this.address, this.value);
 		},
 
