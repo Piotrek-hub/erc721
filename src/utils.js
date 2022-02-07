@@ -27,12 +27,12 @@ export async function fetchContractMetadata() {
 }
 
 export async function mint(address, URI) {
+    console.log('ADDRESS:', address)
     const web3 = getWeb3()
     const contract = new web3.eth.Contract(variables.abi, variables.contractAddress)
 
     const estimatedGas = await contract.methods.mintNft(URI).estimateGas();
-    console.log(address)
-    contract.methods.mintNft(URI).send({
+    await contract.methods.mintNft(URI).send({
         from: address,
         gas: estimatedGas,
     }).then(result => {
