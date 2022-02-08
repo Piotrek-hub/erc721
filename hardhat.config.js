@@ -16,6 +16,14 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+
+const private_key = "ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 module.exports = {
   solidity: "0.8.4",
+  networks: {
+    ropsten: {
+      url: `https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161`,
+      accounts: [`0x${private_key}`]
+    }
+  }
 };

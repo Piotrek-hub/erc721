@@ -1,7 +1,7 @@
 import { abi } from '../artifacts/contracts/Nft.sol/NFT.json';
 
 const variables = {
-    contractAddress: '0x26211Cf2772FaCe78A328654d5AE5edb67F096bc',
+    contractAddress: '0x4f3DAdebb83C32b328e5edB1516f87965eA56303',
     abi: abi
 }
 
