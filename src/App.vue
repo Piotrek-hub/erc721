@@ -26,6 +26,7 @@
 		<hr />
 		<br />
 		<button @click="mint">Mint NFT</button>
+		&nbsp;&nbsp;&nbsp;
 		<input
 			:value="value"
 			@input="(event) => (this.value = event.target.value)"
@@ -46,11 +47,10 @@
 		<br />
 		<br />
 
-		<div v-if="nfts.length > 0">
+		<div v-if="nfts.length > 0" class="container">
 			<div v-for="(nft, key) in nfts" :key="key" class="box">
 				<img :src="nft.link" class="boxImage" />
-				owner:
-				<h3>{{ nft.owner }}</h3>
+				owner: <b>{{ nft.owner }}</b>
 			</div>
 		</div>
 		<div v-else>
@@ -98,13 +98,17 @@ export default {
 
 		async fetchNFT() {
 			const nfts = await fetchNFTS();
-			this.nfts = [...nfts];
+			this.nfts = [...nfts].reverse();
 		},
 	},
 	computed: {
 		nftAddress() {
 			return variables.contractAddress;
 		},
+	},
+	created: async function () {
+		await this.getData();
+		await this.fetchNFT();
 	},
 };
 </script>
@@ -115,18 +119,23 @@ export default {
 	margin: 0;
 }
 
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .box {
-	width: 1000px;
-	height: 300px;
+	width: max-content;
+	height: max-content;
 	padding: 10px;
 	margin: 10px;
 	border: 2px solid black;
+	display: flex;
 }
 
 .boxImage {
 	max-width: 300px;
 	max-height: 300px;
-	float: left;
 	padding-right: 20px;
 }
 </style>

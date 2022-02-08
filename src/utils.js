@@ -47,7 +47,6 @@ export async function fetchNFTS() {
     const links = (await contract.getPastEvents('minted', { fromBlock: 0, toBlock: 'latest' }))
         .map((event) => (event.returnValues.URI))
 
-
     const owners = []
     for (let i = 1; i < links.length + 1; i++) {
         owners.push(await contract.methods.ownerOf(i).call())
