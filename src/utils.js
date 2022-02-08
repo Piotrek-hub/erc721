@@ -32,7 +32,10 @@ export async function mint(address, URI) {
     const web3 = getWeb3()
     const contract = new web3.eth.Contract(variables.abi, variables.contractAddress)
 
-    const estimatedGas = await contract.methods.mintNft(URI).estimateGas();
+    const estimatedGas = await contract.methods.mintNft(URI).estimateGas({
+        from: address,
+        to: variables.contractAddress
+    });
     await contract.methods.mintNft(URI).send({
         from: address,
         gas: estimatedGas,
