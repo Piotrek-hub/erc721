@@ -116,10 +116,11 @@ export default {
 }
 
 .box {
-	width: 750px;
+	width: 1000px;
 	height: 300px;
 	padding: 10px;
 	margin: 10px;
+	border: 2px solid black;
 }
 
 .boxImage {
